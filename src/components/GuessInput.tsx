@@ -1,11 +1,11 @@
 import { TextField } from "@mui/material";
-import React, { JSX } from "react";
+import React from "react";
 
 interface Props {
   addNewGuess: (guess: string) => void;
 }
 
-function GuessInput({ addNewGuess }: Props): JSX.Element {
+function GuessInput({ addNewGuess }: Props) {
   const [inputGuess, setInputGuess] = React.useState<string>("");
 
   return (

@@ -1,8 +1,7 @@
-import { JSX } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Game from "./Game";
 
-function App(): JSX.Element {
+function App() {
   return (
     <>
       <CssBaseline />

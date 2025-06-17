@@ -1,10 +1,9 @@
-import { JSX } from "react";
 import GuessInput from "./GuessInput";
 import React from "react";
 import GuessList from "./GuessList";
 import { Guess } from "../model/guess";
 
-function Game(): JSX.Element {
+function Game() {
   const [currentGuesses, setCurrentGuesses] = React.useState<Guess[]>([]);
 
   function addNewGuess(guess: string) {
