@@ -1,4 +1,4 @@
-import React, { JSX } from "react";
+import { JSX } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 
 function App(): JSX.Element {
