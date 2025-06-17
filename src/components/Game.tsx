@@ -1,5 +1,5 @@
-import React, { JSX } from "react";
-import GuessInput from "../GuessInput";
+import { JSX } from "react";
+import GuessInput from "./GuessInput";
 
 function Game(): JSX.Element {
   return (
