@@ -1,7 +1,11 @@
 import { TextField } from "@mui/material";
 import React, { JSX } from "react";
 
-function GuessInput(): JSX.Element {
+interface Props {
+  addNewGuess: (guess: string) => void;
+}
+
+function GuessInput({ addNewGuess }: Props): JSX.Element {
   const [inputGuess, setInputGuess] = React.useState<string>("");
 
   return (
@@ -9,7 +13,7 @@ function GuessInput(): JSX.Element {
       onSubmit={(event) => {
         event.preventDefault();
 
-        console.log({ guess: inputGuess });
+        addNewGuess(inputGuess);
         setInputGuess("");
       }}
     >
@@ -22,7 +26,7 @@ function GuessInput(): JSX.Element {
             pattern: "[A-Z]{5}",
           },
         }}
-        label="Guess (5-letter-word)"
+        label="Enter a 5-letter word"
         variant="outlined"
         value={inputGuess}
         onChange={(event) => {

@@ -9,7 +9,6 @@ function App(): JSX.Element {
       <div className="wrapper">
         <Game />
       </div>
-      ;
     </>
   );
 }
