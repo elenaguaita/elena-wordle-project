@@ -1,5 +1,8 @@
-import { List, ListItemText } from "@mui/material";
+import { Stack } from "@mui/material";
 import { Guess } from "../model/guess";
+import GuessRow from "./GuessRow";
+import { range } from "../utils";
+import { NUM_OF_GUESSES_ALLOWED } from "../constants";
 
 interface Props {
   currentGuesses: Guess[];
@@ -7,11 +10,16 @@ interface Props {
 
 function GuessList({ currentGuesses }: Props) {
   return (
-    <List>
-      {currentGuesses.map((guess) => (
-        <ListItemText key={guess.id} primary={guess.text} />
+    <Stack spacing={2}>
+      {range(NUM_OF_GUESSES_ALLOWED).map((_, index) => (
+        <GuessRow
+          key={
+            currentGuesses[index] ? currentGuesses[index].id : `empty-${index}`
+          }
+          word={currentGuesses[index] ? currentGuesses[index].text : ""}
+        />
       ))}
-    </List>
+    </Stack>
   );
 }
 

@@ -18,6 +18,7 @@ function GuessInput({ addNewGuess }: Props) {
       }}
     >
       <TextField
+        style={{ display: "flex", flex: 1 }}
         id="outlined-basic"
         slotProps={{
           htmlInput: {

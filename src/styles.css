@@ -80,7 +80,7 @@ h1 {
   gap: var(--game-spacing);
   padding: 20vh 32px;
   margin: 0 auto;
-  min-width: 250px;
+  min-width: 378px;
   max-width: min(500px, 58vh, 100%);
 }
 
