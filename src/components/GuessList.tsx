@@ -17,6 +17,9 @@ function GuessList({ currentGuesses }: Props) {
             currentGuesses[index] ? currentGuesses[index].id : `empty-${index}`
           }
           word={currentGuesses[index] ? currentGuesses[index].text : ""}
+          statusArray={
+            currentGuesses[index] ? currentGuesses[index].statusArray : []
+          }
         />
       ))}
     </Stack>

@@ -1,19 +1,24 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import { range } from "../utils";
 import GuessBox from "./GuessBox";
+import { StatusValue } from "../model/status";
 
 interface Props {
   word: string;
+  statusArray: StatusValue[];
 }
 
-function GuessRow({ word }: Props) {
+function GuessRow({ word, statusArray }: Props) {
   const letters = word.split("");
 
   return (
-    <Grid container spacing={2} justifyContent="center">
-      {range(5).map((index) => (
+    <Grid container spacing={2}>
+      {range(5).map((_, index) => (
         <Grid key={index}>
-          <GuessBox content={letters[index] || ""} />
+          <GuessBox
+            content={letters[index] || ""}
+            status={statusArray[index] || ""}
+          />
         </Grid>
       ))}
     </Grid>
