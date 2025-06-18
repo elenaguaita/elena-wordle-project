@@ -10,7 +10,6 @@ import { Status } from "../model/status";
 function Game() {
   const [answer, setAnswer] = React.useState<string>(() => pickAnswer(words));
   const [currentGuesses, setCurrentGuesses] = React.useState<Guess[]>([]);
-  const [guessed, setGuessed] = React.useState<boolean>(false);
   const [isPlaying, setIsPlaying] = React.useState<boolean>(true);
 
   function addNewGuess(guess: string) {
@@ -31,7 +30,6 @@ function Game() {
 
     const isCorrect = statusArray.every((status) => status === Status.correct);
     if (isCorrect) {
-      setGuessed(true);
       setIsPlaying(false);
       console.log("You've guessed the word!");
     }
