@@ -12,3 +12,7 @@ export function range(start: number, end?: number, step = 1) {
 
   return output;
 }
+
+export function pickAnswer(words: string[]): string {
+  return words[Math.floor(Math.random() * words.length)];
+}
