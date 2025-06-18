@@ -1,7 +1,6 @@
 import { Stack } from "@mui/material";
 import { Guess } from "../model/guess";
 import GuessRow from "./GuessRow";
-import { range } from "../utils";
 import { NUM_OF_GUESSES_ALLOWED } from "../constants";
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 function GuessList({ currentGuesses }: Props) {
   return (
     <Stack spacing={2}>
-      {range(NUM_OF_GUESSES_ALLOWED).map((_, index) => (
+      {Array.from({ length: NUM_OF_GUESSES_ALLOWED }).map((_, index) => (
         <GuessRow
           key={
             currentGuesses[index] ? currentGuesses[index].id : `empty-${index}`

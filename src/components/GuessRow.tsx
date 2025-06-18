@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import { range } from "../utils";
 import GuessBox from "./GuessBox";
 import { StatusValue } from "../model/status";
 
@@ -13,7 +12,7 @@ function GuessRow({ word, statusArray }: Props) {
 
   return (
     <Grid container spacing={2}>
-      {range(5).map((_, index) => (
+      {Array.from({ length: 5 }).map((_, index) => (
         <Grid key={index}>
           <GuessBox
             content={letters[index] || ""}
