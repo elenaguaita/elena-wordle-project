@@ -3,9 +3,10 @@ import React from "react";
 
 interface Props {
   addNewGuess: (guess: string) => void;
+  isPlaying: boolean;
 }
 
-function GuessInput({ addNewGuess }: Props) {
+function GuessInput({ addNewGuess, isPlaying }: Props) {
   const [inputGuess, setInputGuess] = React.useState<string>("");
 
   return (
@@ -34,6 +35,7 @@ function GuessInput({ addNewGuess }: Props) {
           const formattedGuess = event.target.value.toUpperCase().trim();
           setInputGuess(formattedGuess);
         }}
+        disabled={!isPlaying}
       />
     </form>
   );
