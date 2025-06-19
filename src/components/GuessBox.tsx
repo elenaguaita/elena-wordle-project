@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material";
+import { StatusValue } from "../model/status";
 
 interface Props {
   content: string;
+  status: StatusValue;
 }
 
-function GuessBox({ content }: Props) {
+function GuessBox({ content, status }: Props) {
   return (
     <Box
       width={50}
@@ -12,10 +14,7 @@ function GuessBox({ content }: Props) {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      border={1}
-      borderRadius={1}
-      borderColor="gray"
-      bgcolor="white"
+      className={`cell ${status}`}
     >
       <Typography variant="h6" fontWeight="medium">
         {content}

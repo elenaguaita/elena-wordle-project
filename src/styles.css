@@ -99,12 +99,11 @@ h1 {
 
 .cell {
   position: relative;
-  width: 20%;
   display: grid;
   place-content: center;
   aspect-ratio: 1 / 1;
   border: 2px solid var(--color-gray-700);
-  border-radius: var(--radius);
+  border-radius: 4px;
   font-size: 2rem;
 }
 
