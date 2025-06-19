@@ -5,10 +5,10 @@ import { Guess } from "../model/guess";
 import { NUM_OF_GUESSES_ALLOWED } from "../constants";
 import { words } from "../data";
 import { checkGuess, pickAnswer } from "../utils";
-import { Alert, Snackbar } from "@mui/material";
+import { Alert, Button, Snackbar } from "@mui/material";
 
 type AlertState = {
-  severity: "success" | "warning" | "info";
+  severity: "success" | "warning";
   message: string;
 } | null;
 
@@ -18,14 +18,11 @@ function Game() {
   const [isPlaying, setIsPlaying] = React.useState<boolean>(true);
   const [alert, setAlert] = React.useState<AlertState>(null);
 
-  function restartGame() {
-    if (alert?.severity === "info") setAlert(null);
-    else {
-      setAlert({
-        severity: "info",
-        message: "Refresh the page to play again.",
-      });
-    }
+  function reset() {
+    setAnswer(pickAnswer(words));
+    setCurrentGuesses([]);
+    setIsPlaying(true);
+    setAlert(null);
   }
 
   function addNewGuess(guess: string) {
@@ -69,10 +66,18 @@ function Game() {
         <Snackbar
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
           open={true}
-          onClose={restartGame}
         >
           <Alert
-            onClose={restartGame}
+            action={
+              <Button
+                onClick={reset}
+                variant="outlined"
+                color="inherit"
+                size="small"
+              >
+                restart
+              </Button>
+            }
             severity={alert?.severity}
             variant="filled"
             sx={{ width: "100%" }}
