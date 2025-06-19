@@ -17,7 +17,9 @@ function GuessList({ currentGuesses }: Props) {
           }
           word={currentGuesses[index] ? currentGuesses[index].text : ""}
           statusArray={
-            currentGuesses[index] ? currentGuesses[index].statusArray : []
+            currentGuesses[index]
+              ? currentGuesses[index].statusArray
+              : Array(5).fill("unknown")
           }
         />
       ))}

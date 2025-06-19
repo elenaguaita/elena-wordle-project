@@ -3,7 +3,7 @@ import { StatusValue } from "../model/status";
 
 interface Props {
   content: string;
-  status: StatusValue | "";
+  status: StatusValue;
 }
 
 function GuessBox({ content, status }: Props) {

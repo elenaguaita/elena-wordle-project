@@ -15,8 +15,8 @@ function GuessRow({ word, statusArray }: Props) {
       {Array.from({ length: 5 }).map((_, index) => (
         <Grid key={index}>
           <GuessBox
-            content={letters[index] || ""}
-            status={statusArray[index] || ""}
+            content={letters[index] || " "}
+            status={statusArray[index]}
           />
         </Grid>
       ))}

@@ -5,7 +5,6 @@ import { Guess } from "../model/guess";
 import { NUM_OF_GUESSES_ALLOWED } from "../constants";
 import { words } from "../data";
 import { checkGuess, pickAnswer } from "../utils";
-import { Status } from "../model/status";
 
 function Game() {
   const [answer, setAnswer] = React.useState<string>(() => pickAnswer(words));
@@ -28,7 +27,7 @@ function Game() {
     const nextCurrentGuesses = [...currentGuesses, newGuess];
     setCurrentGuesses(nextCurrentGuesses);
 
-    const isCorrect = statusArray.every((status) => status === Status.correct);
+    const isCorrect = statusArray.every((status) => status === "correct");
     if (isCorrect) {
       setIsPlaying(false);
       console.log("You've guessed the word!");
